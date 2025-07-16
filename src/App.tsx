@@ -187,7 +187,13 @@ const App = () => {
             value={targetDateInput ? formatDateForInput(targetDateInput) : ""}
             onChange={(e) => {
               const val = e.target.value;
-              setTargetDateInput(val ? new Date(val) : null);
+              if (val) {
+                const localDate = new Date(val);
+                localDate.setHours(12, 0, 0, 0);
+                setTargetDateInput(localDate);
+              } else {
+                setTargetDateInput(null);
+              }
             }}
             onKeyDown={(e) => { if (e.key === 'Enter') handleSubmitClick(); }}
             className="w-[180px] px-2 py-2 text-black text-lg rounded-lg border-2 border-cyan-400 shadow focus:outline-none focus:ring focus:ring-cyan-300"
