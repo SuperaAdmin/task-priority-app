@@ -188,8 +188,8 @@ const App = () => {
             onChange={(e) => {
               const val = e.target.value;
               if (val) {
-                const localDate = new Date(val);
-                localDate.setHours(12, 0, 0, 0);
+                const [year, month, day] = val.split("-").map(Number);
+                const localDate = new Date(year, month - 1, day); // JS months are 0-indexed 😡
                 setTargetDateInput(localDate);
               } else {
                 setTargetDateInput(null);
