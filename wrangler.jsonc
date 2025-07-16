@@ -1,0 +1,14 @@
+{
+  "name": "task-priority-app",
+  "compatibility_date": "2025-07-11",
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "kv_namespaces": [
+    {
+      "binding": "TASK_PRIORITY",
+      "id": "9d81cb678390477d88d8c06d4834c023"
+    }
+  ]
+}
